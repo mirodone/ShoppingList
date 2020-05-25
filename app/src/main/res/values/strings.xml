@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Shopping List</string>
+    <string name="action_settings">Settings</string>
+    <string name="enter_item">Enter Item</string>
+    <string name="h_enter_item">enter item</string>
+    <string name="h_enter_qty">enter quantity</string>
+    <string name="save_btn">Save</string>
+</resources>
