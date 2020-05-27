@@ -5,4 +5,5 @@
     <string name="h_enter_item">enter item</string>
     <string name="h_enter_qty">enter quantity</string>
     <string name="save_btn">Save</string>
+    <string name="update_text">Update</string>
 </resources>

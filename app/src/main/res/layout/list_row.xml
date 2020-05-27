@@ -1,43 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="1dp"
+    android:orientation="vertical">
 
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="10dp"
+
+
+        >
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="15dp">
-<TextView
-    android:id="@+id/item_name"
-    android:text="@string/app_name"
-    android:textSize="18sp"
-    android:textStyle="bold"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            >
 
             <TextView
-                android:id="@+id/item_qty"
-                android:layout_below="@id/item_name"
-                android:text="@string/app_name"
-                android:textSize="18sp"
-                android:textStyle="bold"
+                android:id="@+id/list_item_name"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/list_item_qty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/list_item_name"
+                android:text="@string/app_name"
+                android:textSize="15sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/list_item_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/list_item_qty"
+                android:text="@string/app_name"
+                android:textSize="10sp"
+                android:textStyle="italic" />
 
             <TableRow
-                android:layout_alignParentEnd="true"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp"
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_alignBottom="@id/item_qty">
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/list_item_date"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/editButton"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@android:drawable/ic_menu_edit" />
+
+                <Button
+                    android:id="@+id/deleteButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@android:drawable/ic_delete" />
 
 
             </TableRow>

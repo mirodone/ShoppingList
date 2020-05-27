@@ -36,11 +36,9 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         mDatabaseHandler = new DatabaseHandler(this);
 
-
-
+        bypassActivity();
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -57,18 +55,27 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void bypassActivity() {
+
+        if (mDatabaseHandler.getItemsCount() > 0) {
+            startActivity(new Intent(MainActivity.this, ListActivity.class));
+            finish();
+        }
+
+    }
+
 
     private void saveItem(View view) {
 
-            Item item = new Item();
+        Item item = new Item();
 
-            String newItem = babyItem.getText().toString().trim();
-            int quantity = Integer.parseInt(quantityAdd.getText().toString().trim());
+        String newItem = babyItem.getText().toString().trim();
+        int quantity = Integer.parseInt(quantityAdd.getText().toString().trim());
 
-            item.setItemName(newItem);
-            item.setItemQuantity(quantity);
+        item.setItemName(newItem);
+        item.setItemQuantity(quantity);
 
-            mDatabaseHandler.addItem(item);
+        mDatabaseHandler.addItem(item);
 
         Snackbar.make(view, "Item saved", Snackbar.LENGTH_LONG)
                 .show();
@@ -79,16 +86,16 @@ public class MainActivity extends AppCompatActivity {
 
                 dialog.dismiss();
                 // move to the next screen
-
+                startActivity(new Intent(MainActivity.this, ListActivity.class));
 
             }
         }, 1200); // delAY 1 SEC
-startActivity(new Intent(MainActivity.this, ListActivity.class));
+
 
     }
 
 
-    private void createPopupDialog(){
+    public void createPopupDialog() {
 
         builder = new AlertDialog.Builder(this);
         View view = getLayoutInflater().inflate(R.layout.popup, null);
@@ -100,10 +107,10 @@ startActivity(new Intent(MainActivity.this, ListActivity.class));
             @Override
             public void onClick(View view) {
 
-                if( !babyItem.getText().toString().isEmpty() &&
+                if (!babyItem.getText().toString().isEmpty() &&
                         !quantityAdd.getText().toString().isEmpty()) {
                     saveItem(view);
-                }else {
+                } else {
                     Snackbar.make(view, "Fill all the fields!", Snackbar.LENGTH_SHORT)
                             .show();
                 }

@@ -6,19 +6,13 @@ public class Item {
 
     private String itemName;
     private int itemQuantity;
-    private  String dateItemAdded;
+    private String dateItemAdded;
 
 
-    public Item(){
+    public Item() {
 
     }
 
-    public Item(int id, String itemName, int itemQuantity, String dateItemAdded) {
-        this.id = id;
-        this.itemName = itemName;
-        this.itemQuantity = itemQuantity;
-        this.dateItemAdded = dateItemAdded;
-    }
 
     public int getId() {
         return id;
