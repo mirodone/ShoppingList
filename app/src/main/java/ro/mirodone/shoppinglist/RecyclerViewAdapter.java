@@ -110,8 +110,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             alertDialog = new AlertDialog.Builder(context);
             final AlertDialog dialog;
             dialog = alertDialog.create();
-            alertDialog.setMessage("Are you sure ?");
-            alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            alertDialog.setMessage(R.string.dialog_question);
+            alertDialog.setPositiveButton((R.string.dialog_yes), new DialogInterface.OnClickListener() {
 
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
@@ -124,7 +124,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 }
             });
 
-            alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            alertDialog.setNegativeButton((R.string.dialog_no), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     dialog.dismiss();
@@ -136,7 +136,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         private void editItem(final Item newItem) {
 
-            //populate popup with curent object data
+            //populate popup with current object data
 
             alertDialog = new AlertDialog.Builder(context);
             mLayoutInflater = LayoutInflater.from(context);
@@ -177,7 +177,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                         //refresh the update
                         notifyItemChanged(getAdapterPosition(), newItem);
                     } else {
-                        Snackbar.make(view, "Fill all the fields!", Snackbar.LENGTH_SHORT)
+                        Snackbar.make(view, (R.string.btn_fill_fields), Snackbar.LENGTH_SHORT)
                                 .show();
                     }
 

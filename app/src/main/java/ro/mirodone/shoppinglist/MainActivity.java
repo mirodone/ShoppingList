@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
         mDatabaseHandler.addItem(item);
 
-        Snackbar.make(view, "Item saved", Snackbar.LENGTH_LONG)
+        Snackbar.make(view, getText(R.string.btn_item_saved) , Snackbar.LENGTH_LONG)
                 .show();
 
         new Handler().postDelayed(new Runnable() {
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                         !quantityAdd.getText().toString().isEmpty()) {
                     saveItem(view);
                 } else {
-                    Snackbar.make(view, "Fill all the fields!", Snackbar.LENGTH_SHORT)
+                    Snackbar.make(view, getString(R.string.btn_fill_fields), Snackbar.LENGTH_SHORT)
                             .show();
                 }
             }
@@ -140,6 +140,8 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent mainIntent = new Intent(MainActivity.this, About.class);
+            startActivity(mainIntent);
             return true;
         }
 

@@ -52,7 +52,7 @@ public class ListActivity extends AppCompatActivity {
         itemList = mDatabaseHandler.getAllItems();
 
         for (Item item : itemList) {
-            Log.d(TAG, "onCreate: " + item.getItemName());
+          //  Log.d(TAG, "onCreate: " + item.getItemName());
         }
 
         mRecyclerViewAdapter = new RecyclerViewAdapter(this, itemList);
@@ -87,7 +87,7 @@ public class ListActivity extends AppCompatActivity {
                         !quantityAdd.getText().toString().isEmpty()) {
                     saveItem(view);
                 } else {
-                    Snackbar.make(view, "Fill all the fields!", Snackbar.LENGTH_SHORT)
+                    Snackbar.make(view, getText(R.string.btn_fill_fields), Snackbar.LENGTH_SHORT)
                             .show();
                 }
             }
@@ -110,7 +110,7 @@ public class ListActivity extends AppCompatActivity {
 
         mDatabaseHandler.addItem(item);
 
-        Snackbar.make(view, "Item saved", Snackbar.LENGTH_LONG)
+        Snackbar.make(view, getText(R.string.btn_item_saved), Snackbar.LENGTH_LONG)
                 .show();
 
         new Handler().postDelayed(new Runnable() {
@@ -123,7 +123,7 @@ public class ListActivity extends AppCompatActivity {
                 finish();
 
             }
-        }, 1200); // delAY 1 SEC
+        }, 1200); // delay 1 SEC
 
     }
 }

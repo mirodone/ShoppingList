@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Lista!</string>
+    <string name="action_settings">Despre</string>
+    <string name="enter_item">Adaugă articol</string>
+    <string name="h_enter_item">adaugă articol</string>
+    <string name="h_enter_qty">adaugă cantitate</string>
+    <string name="save_btn">Salvează</string>
+    <string name="update_text">Modifică</string>
+    <string name="no_items">Nu sunt articole in listă, adaugă-le acum.</string>
+    <string name="btn_item_saved">Articol salvat</string>
+    <string name="btn_fill_fields">Completeaza toate campurile</string>
+    <string name="about_text">\n\n Aplicație simplă pentru lista de cumpăraturi.
+        \n Salvează produsele dorite de acasa și șterge-le in timp ce le pui in coșul de cumpăraturi. Simplu și rapid.
+        \n\n
+        Realizat cu grijă de: \n\n mirodone.ro</string>
+    <string name="tx_web" translatable="false">www.mirodone.ro</string>
+    <string name="dialog_question">Ești sigur ?</string>
+    <string name="dialog_yes">Da</string>
+    <string name="dialog_no">Nu</string>
+    <string name="tv_item_text">Articol:</string>
+    <string name="tv_item_qty">Cantitate:</string>
+    <string name="add_item_text">Adăuga articol</string>
+
+</resources>
